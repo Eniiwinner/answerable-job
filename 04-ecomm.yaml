@@ -12,7 +12,7 @@
 
     - name: Host code
       git:
-        repo: https://github.com/Eniiwinner/ecomm-3.git
+        repo: https://github.com/Eniiwinner/food3.git
         dest: /var/www/html
 
 ...
