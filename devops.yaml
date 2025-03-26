@@ -1,0 +1,13 @@
+- name: Copy and Rename devops.yaml
+  hosts: all
+  become: yes
+  tasks:
+    - name: Copy devops.yaml to remote nodes
+      copy:
+        src: devops.yaml
+        dest: /home/ec2-user/devops.yaml
+        mode: '0644'
+
+    - name: Move devops.yaml to /opt/devops.yaml
+      command: mv /home/ec2-user/devops.yaml /opt/devops.yaml
+...
