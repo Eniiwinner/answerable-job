@@ -10,7 +10,7 @@
         name: git
         state: present
 
-    - name: Host code
+    - name: Git clone repository
       git:
         repo: https://github.com/Eniiwinner/food3.git
         dest: /var/www/html
