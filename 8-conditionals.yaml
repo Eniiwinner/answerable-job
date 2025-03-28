@@ -11,19 +11,38 @@
       yum:
         name: httpd
         state: present
-      when: ansible_distribution == "Amazon"
+      when: ansible_distribution == "Debian"
 
     - name: start HTTPD
       service:
         name: httpd
         state: started
-      when: ansible_distribution == "Amazon"
+      when: ansible_distribution == "Debian"
 
     - name: enable HTTPD
       service:
         name: httpd
         enabled: yes
-      when: ansible_distribution == "Amazon"
+      when: ansible_distribution == "Debian"
+
+
+    - name: Install Apache2
+      apt:
+        name: apache2
+        state: present
+      when: ansible_distribution == "Ubuntu"
+
+    - name: start Apache2
+      service:
+        name: apache2
+        state: started
+      when: ansible_distribution == "Ubuntu"
+
+    - name: enable Apache2
+      service:
+        name: apache2
+        enabled: yes
+      when: ansible_distribution == "Ubuntu"
 
     - name: Install Apache2
       apt:
