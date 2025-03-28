@@ -1,4 +1,5 @@
 ---
+---
 - name: Install HTTP server
   hosts: gp3
   become: yes
@@ -8,19 +9,19 @@
       yum:
         name: httpd
         state: present
-      when: ansible_distribution == ["Amazon", "Fedora"]
+      when: ansible_distribution == "Amazon"
 
     - name: Start HTTPD
       service:
         name: httpd
         state: started
-      when: ansible_distribution == ["Amazon", "Fedora"]
+      when: ansible_distribution == "Amazon"
 
     - name: Enable HTTPD
       service:
         name: httpd
         enabled: yes
-      when: ansible_distribution == ["Amazon", "Fedora"]
+      when: ansible_distribution == "Amazon"
 
     - name: Install Apache2 on Ubuntu
       apt:
@@ -59,5 +60,24 @@
         name: apache2
         enabled: yes
       when: ansible_distribution == "Debian"
+
+    - name: Install Nginx on Fedora
+      dnf:
+        name: nginx
+        state: present
+      when: ansible_distribution == "Fedora"
+
+    - name: Start Nginx on Fedora
+      service:
+        name: nginx
+        state: started
+      when: ansible_distribution == "Fedora"
+
+    - name: Enable Nginx on Fedora
+      service:
+        name: nginx
+        enabled: yes
+      when: ansible_distribution == "Fedora"
+
 
 ...
