@@ -3,7 +3,7 @@
 
 
 - name: Install HTTP server
-  hosts: g3
+  hosts: gp3
   become: yes
 
   tasks:
