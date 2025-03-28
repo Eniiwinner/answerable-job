@@ -60,11 +60,13 @@
         enabled: yes
       when: ansible_distribution == "Debian"
 
-    - name: Install a package using DNF
+    - name: Install a package using DNF 4
       dnf:
-       name: vim
-       state: present
-
+        name: vim
+        state: present
+        use_backend: dnf4
+        when: ansible_distribution == "Fedora"
+    
     - name: Install Nginx on Fedora
       dnf:
         name: nginx
