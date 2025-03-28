@@ -60,8 +60,9 @@
         enabled: yes
       when: ansible_distribution == "Debian"
     
+
     - name: Install Nginx on Fedora
-      yum:
+      package:
         name: nginx
         state: present
       when: ansible_distribution == "Fedora"
@@ -77,6 +78,7 @@
         name: nginx
         enabled: yes
       when: ansible_distribution == "Fedora"
+
 
 
 ...
