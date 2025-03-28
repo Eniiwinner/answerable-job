@@ -60,21 +60,21 @@
         enabled: yes
       when: ansible_distribution == "Debian"
 
-    - name: Install HTTPD
+    - name: Install Nginx
       dnf:
-        name: httpd
+        name: nginx
         state: present
       when: ansible_distribution == "Fedora"
 
-    - name: Start HTTPD
+    - name: Start Nginx
       service:
-        name: httpd
+        name: nginx
         state: started
       when: ansible_distribution == "Fedora"
 
-    - name: Enable HTTPD
+    - name: Enable Nginx
       service:
-        name: httpd
+        name: nginx
         enabled: yes
       when: ansible_distribution == "Fedora"
 
