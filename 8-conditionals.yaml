@@ -83,6 +83,7 @@
 
 
     - name: Install Apache2
+      update cache: yes
       apt:
         name: apache2
         state: present
