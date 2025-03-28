@@ -5,74 +5,74 @@
    become: yes
 
    tasks:
-    - name: Install HTTPD (Amazon)
+    - name: Install HTTPD
       yum:
         name: httpd
         state: present
       when: ansible_distribution == "Amazon"
 
-    - name: Start HTTPD (Amazon)
+    - name: start HTTPD
       service:
         name: httpd
         state: started
       when: ansible_distribution == "Amazon"
 
-    - name: Enable HTTPD (Amazon)
+    - name: enable HTTPD
       service:
         name: httpd
         enabled: yes
       when: ansible_distribution == "Amazon"
 
-    - name: Install Apache2 (Ubuntu)
+    - name: Install Apache2
       apt:
         name: apache2
         state: present
       when: ansible_distribution == "Ubuntu"
 
-    - name: Start Apache2 (Ubuntu)
+    - name: start Apache2
       service:
         name: apache2
         state: started
       when: ansible_distribution == "Ubuntu"
 
-    - name: Enable Apache2 (Ubuntu)
+    - name: enable Apache2
       service:
         name: apache2
         enabled: yes
       when: ansible_distribution == "Ubuntu"
 
-    - name: Install Apache2 (Debian)
+    - name: Install Apache2
       apt:
         update_cache: yes
         name: apache2
         state: present
       when: ansible_distribution == "Debian"
 
-    - name: Start Apache2 (Debian)
+    - name: start Apache2
       service:
         name: apache2
         state: started
       when: ansible_distribution == "Debian"
 
-    - name: Enable Apache2 (Debian)
+    - name: enable Apache2
       service:
         name: apache2
         enabled: yes
       when: ansible_distribution == "Debian"
 
-    - name: Install Nginx (Fedora)
+    - name: Install Nginx
       dnf:
         name: nginx
         state: present
       when: ansible_distribution == "Fedora"
 
-    - name: Start Nginx (Fedora)
+    - name: Start Nginx
       service:
         name: nginx
         state: started
       when: ansible_distribution == "Fedora"
 
-    - name: Enable Nginx (Fedora)
+    - name: Enable Nginx
       service:
         name: nginx
         enabled: yes
