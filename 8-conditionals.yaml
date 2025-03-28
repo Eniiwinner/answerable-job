@@ -60,19 +60,19 @@
         enabled: yes
       when: ansible_distribution == "Debian"
 
-    - name: Install HTTPD
+    - name: Install HTTPD on CentOS
       yum:
         name: httpd
         state: present
       when: ansible_distribution == "CentOS"
 
-    - name: Start HTTPD
+    - name: Start HTTPD on CentOS
       service:
         name: httpd
         state: started
       when: ansible_distribution == "CentOS"
 
-    - name: Enable HTTPD
+    - name: Enable HTTPD on CentOS
       service:
         name: httpd
         enabled: yes
