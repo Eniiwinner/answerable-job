@@ -61,7 +61,7 @@
       when: ansible_distribution == "Debian"
     
     - name: Install Nginx on Fedora
-      dnf:
+      yum:
         name: nginx
         state: present
       when: ansible_distribution == "Fedora"
