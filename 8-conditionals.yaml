@@ -66,15 +66,16 @@
         state: present
       when: ansible_distribution == "CentOS"
 
-    - name: start HTTPD
+    - name: Start HTTPD
       service:
         name: httpd
         state: started
       when: ansible_distribution == "CentOS"
 
-    - name: enable HTTPD
+    - name: Enable HTTPD
       service:
         name: httpd
         enabled: yes
       when: ansible_distribution == "CentOS"
+
 ...
