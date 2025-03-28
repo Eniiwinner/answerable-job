@@ -60,22 +60,21 @@
         enabled: yes
       when: ansible_distribution == "Debian"
 
-    - name: Install Apache2
-      apt:
-        update_cache: yes
-        name: apache2
+    - name: Install HTTPD
+      yum:
+        name: httpd
         state: present
       when: ansible_distribution == "CentOS"
 
-    - name: start Apache2
+    - name: start HTTPD
       service:
-        name: apache2
+        name: httpd
         state: started
       when: ansible_distribution == "CentOS"
 
-    - name: enable Apache2
+    - name: enable HTTPD
       service:
-        name: apache2
+        name: httpd
         enabled: yes
       when: ansible_distribution == "CentOS"
 ...
