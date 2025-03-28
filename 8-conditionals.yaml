@@ -60,29 +60,21 @@
         enabled: yes
       when: ansible_distribution == "Debian"
 
-    - name: Install HTTPD on CentOS
+    - name: Install HTTPD
       yum:
         name: httpd
         state: present
-      when: ansible_distribution == "CentOS"
+      when: ansible_distribution == "Fedora"
 
-    - name: Start HTTPD on CentOS
+    - name: Start HTTPD
       service:
         name: httpd
         state: started
-      when: ansible_distribution == "CentOS"
+      when: ansible_distribution == "Fedora"
 
-    - name: Enable HTTPD on CentOS
+    - name: Enable HTTPD
       service:
         name: httpd
         enabled: yes
-      when: ansible_distribution == "CentOS"
+      when: ansible_distribution == "Fedora"
 
-    - name: Allow HTTP through the firewall (CentOS)
-      firewalld:
-        service: http
-        permanent: yes
-        state: enabled
-      when: ansible_distribution == "CentOS"
-
-...
