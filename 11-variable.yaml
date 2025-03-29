@@ -1,0 +1,14 @@
+---
+- name: Custom Variable
+  hosts: gp3
+  become: yes
+  vars: 
+    myusername: Eniiwinner
+
+  tasks:
+  - name: update freeze page
+    template:
+      src: unique.j2
+      dest: /var/www/html/unique.html
+...
+
