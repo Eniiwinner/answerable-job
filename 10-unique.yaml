@@ -1,0 +1,12 @@
+---
+- name: Freeze Page
+  hosts: gp3
+  become: yes
+
+  tasks:
+  - name: update freeze page
+    template:
+      src: unique.j2
+      dest: /var/www/html/unique.html
+...
+
