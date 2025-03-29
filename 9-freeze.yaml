@@ -1,4 +1,3 @@
-
 ---
 - name: Freeze Page
   hosts: g3
