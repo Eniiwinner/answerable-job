@@ -1,6 +1,6 @@
 ---
 - name: Freeze Page
-  hosts: g3
+  hosts: gp3
   become: yes
 
   tasks:
