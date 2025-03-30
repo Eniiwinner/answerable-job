@@ -1,0 +1,18 @@
+
+---
+- name: Deploy Web App
+  hosts: gp3
+  become: yes
+
+  tasks:
+    - name: Install Git 
+      yum:
+        name: git
+        state: present
+
+    - name: Git clone repository
+      git:
+        repo: https://github.com/Eniiwinner/ecomm-3.git
+        dest: /var/www/html
+
+...
