@@ -1,4 +1,6 @@
 ---
 # tasks file for apache
--import_tasks: installations.yaml
--import_tasks: configuration.yaml
+
+- import_tasks: installations.yaml
+- import_tasks: configuration.yaml
+...
