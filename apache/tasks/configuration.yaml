@@ -1,0 +1,12 @@
+---
+- name: Update freeze page
+  copy:
+    src: freeze.html
+    dest: /var/www/html/freeze.html
+
+- name: Update Unique page
+  template:
+        src: unique.j2
+        dest: /var/www/html/unique.html
+...
+
