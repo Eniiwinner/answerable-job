@@ -6,7 +6,7 @@
     myusername: Eniiwinner
 
   tasks:
-    - name: Update freeze page
+    - name: Update Unique page
       template:
         src: unique.j2
         dest: /var/www/html/unique.html
