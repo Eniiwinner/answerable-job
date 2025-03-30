@@ -1,5 +1,5 @@
 ---
-- name: Custom Variable
+- name: Variables Custom
   hosts: gp3
   become: yes
   vars: 
