@@ -2,8 +2,8 @@
 - name: Deploy Web App
   hosts: n8
   become: yes
-  myusername: Eniiwinner
+  vars:
+    myusername: Eniiwinner
   roles:
     - apache
     - html
-...
