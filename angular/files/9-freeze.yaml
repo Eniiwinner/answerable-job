@@ -1,0 +1,11 @@
+---
+- name: Freeze Page
+  hosts: gp3
+  become: yes
+
+  tasks:
+  - name: update freeze page
+    copy:
+      src: freeze.html
+      dest: /var/www/html/freeze.html
+...
